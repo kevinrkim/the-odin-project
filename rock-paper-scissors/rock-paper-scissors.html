@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Welcome to Rock, Paper, Scissors!</h1>
+    
+    <div id="game-end">
+      <div id="game-end-modal">
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Welcome to Rock, Paper, Scissors!</h1>
+      
+      <div id="score">
+        <div id="player-score">You: 0</div>
+        <div id="computer-score">Computer: 0</div>
+      </div>
+
+      <div id="final-score"></div>
+
+      <div id="game-selections">
+        <div class="game-button">Rock</div>
+        <div class="game-button">Paper</div>
+        <div class="game-button">Scissors</div>
+      </div>
+      
+      <div id="game-results">
+      </div>
+    </div>
+
   </body>
+  <script src="app.js"></script>
 </html>

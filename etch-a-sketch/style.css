@@ -9,3 +9,7 @@
   grid-template-columns: repeat(16, 32px);
   grid-template-rows: repeat(16, 32px);
 }
+
+.colored {
+  background-color: rgba(0,0,0,0.5);
+}

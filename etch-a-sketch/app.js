@@ -5,8 +5,15 @@ const randomizeBtn = document.querySelector('#randomize');
 let randomizer = 0;
 
 randomizeBtn.addEventListener('click', () => {
-  randomizer = 1;
-  colorize();
+  if (randomizer == 0) {
+    randomizer = 1;
+    colorize();
+    randomizeBtn.textContent = 'Unrandomize color';
+  } else if (randomizer == 1) {
+    randomizer = 0;
+    colorize();
+    randomizeBtn.textContent = 'Randomize color';
+  }
 });
 
 gridSizeBtn.addEventListener('click', (event) => {
@@ -23,7 +30,7 @@ const colorize = () => {
     const gridSquare = document.querySelectorAll('.grid-square');
     gridSquare.forEach((square) => {
       square.addEventListener('mouseover', () => {
-        square.classList.add('colored');
+        square.style.backgroundColor = 'rgb(0,0,0)';
       });
     });
   } else {
@@ -32,7 +39,7 @@ const colorize = () => {
       square.addEventListener('mouseover', () => {
         let randomRgb = [];
         for (i = 0; i < 3; i++) { randomRgb.push(Math.round(Math.random() * 255)) }
-        square.style.backgroundColor = `${randomRgb[0]}, ${randomRgb[1]}, ${randomRgb[2]}`;
+        square.style.backgroundColor = `rgb(${randomRgb[0]}, ${randomRgb[1]}, ${randomRgb[2]})`;
       });
     });
   }
@@ -41,7 +48,7 @@ const colorize = () => {
 const decolorize = () => {
   const gridSquare = document.querySelectorAll('.grid-square');
   gridSquare.forEach((square) => {
-    square.classList.remove('colored');
+    square.style.backgroundColor = 'rgb(255,255,255)';
   });
 };
 
